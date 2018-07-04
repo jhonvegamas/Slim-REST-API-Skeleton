@@ -27,9 +27,12 @@ Replace `[my-app-name]` with the desired directory name for your new application
 To run the application in development, you can run these commands 
 
 	cd [my-app-name]
-	php composer.phar start
+	composer install
+	composer start
 
 That's it! Now go build something cool.
+
+use app `https://[domain-server]/public/test/`
 
 ## Contributing
 
