@@ -34,32 +34,17 @@ That's it! Now go build something cool.
 
 use app `https://[domain-server]/public/test/`
 
-## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+<a name="authors"></a>
+## :eyeglasses: Authors
 
-## Learn More
+  * **Jhon Vega** - *Initial work* - [JhonVegaMas](https://github.com/jhonvegamas) 
 
-Learn more at these links:
+See also the list of [contributors](https://github.com/jhonvegamas/Slim-REST-API-Skeleton/graphs/contributors)
+ who participated in this project.
 
-- [Website](https://www.slimframework.com)
-- [Documentation](https://www.slimframework.com/docs/start/installation.html)
-- [Support Forum](http://discourse.slimframework.com)
-- [Twitter](https://twitter.com/slimphp)
-- [Resources](https://github.com/xssc/awesome-slim)
+<a name="license"></a>
+## :memo: License
 
-## Security
-
-If you discover security related issues, please email security@slimframework.com instead of using the issue tracker.
-
-## Credits
-
-- [Josh Lockhart](https://github.com/codeguy)
-- [Andrew Smith](https://github.com/silentworks)
-- [Rob Allen](https://github.com/akrabat)
-- [Gabriel Manricks](https://github.com/gmanricks)
-- [All Contributors](../../contributors)
-
-## License
-
-The Slim Framework is licensed under the MIT license. See [License File](LICENSE.md) for more information.
+This API is licensed under the MIT License - see the
+ [MIT License](https://opensource.org/licenses/MIT) for details.
