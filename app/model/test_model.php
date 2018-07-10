@@ -75,7 +75,8 @@ class TestModel
             $stmt->bindParam("password", $password);            
             $stmt->execute();
 
-            $this->response->setResponse(true, 'registro guardado exitosamente');
+            $this->response->setResponse(true, 'Successfully Insertion');
+            $this->response->result = "";
         } catch (Exception $e) {
             $this->response->setResponse(false, $e->getMessage());
         }
@@ -102,8 +103,8 @@ class TestModel
             $stmt->bindParam("password", $password);            
             $stmt->execute();
 
-            $this->response->setResponse(true);
-            $this->response->result = "Update Sucessful ";
+            $this->response->setResponse(true, "Successfully Updated");
+            $this->response->result = "";
             return $this->response;
 
         } catch (Exception $e) {
@@ -113,15 +114,15 @@ class TestModel
 
     public function delete($id)
     {
-        $query = "UPDATE $this->table WHERE id = :id";
+        $query = "DELETE FROM $this->table WHERE id = :id";
         try {
 
             $stmt = $this->db->prepare($query);
             $stmt->bindParam("id", $id);
             $stmt->execute();
 
-            $this->response->setResponse(true);
-            $this->response->result = "Successfully Inactivated";
+            $this->response->setResponse(true, "Successfully Deleted");
+            $this->response->result = "";
             return $this->response;
 
         } catch (Exception $e) {
