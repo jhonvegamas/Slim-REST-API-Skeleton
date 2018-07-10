@@ -91,7 +91,7 @@ class TestModel
         $email      = $data['email'];
         $password   = $data['password'];
 
-        $query = "UPDATE $this->table SET id = :id, first_name = :first_name, last_name = :last_name, email = :email, password = :password";
+        $query = "UPDATE $this->table SET id = :id, first_name = :first_name, last_name = :last_name, email = :email, password = :password WHERE id = :id";
 
         try {
 
