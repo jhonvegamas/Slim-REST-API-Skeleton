@@ -1,6 +1,32 @@
-Options -Indexes
+Options All -Indexes
+IndexIgnore * 
 
 <Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files *.json>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files *.log>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files *.md>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files *.lock>
+Order allow,deny
+Deny from all
+</Files>
+
+<Files *.yml>
 Order allow,deny
 Deny from all
 </Files>
