@@ -28,7 +28,7 @@ To run the application in development, you can run these commands
 
 	cd [my-app-name]
 	composer install
-	composer start
+	composer start `or` php -S localhost:80
 
 That's it! Now go build something cool.
 
@@ -69,7 +69,7 @@ Import the [TEST-DATA.sql](https://raw.githubusercontent.com/jhonvegamas/tools-p
 Use the Postman application to test the API or anyone that allows you to make requests of type GET, POST, PUT, DELETE.
 
 URL: `https://[domain-server]/public/test/`
-EXAMPLE: `https://localhost/public/test/`
+EXAMPLE: `https://localhost/public/test/` - `https://localhost:8080/test/`
 
 ## :eyeglasses: Authors
 
