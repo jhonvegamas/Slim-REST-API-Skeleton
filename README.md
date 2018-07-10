@@ -32,7 +32,7 @@ To run the application in development, you can run these commands
 
 That's it! Now go build something cool.
 
-use app `https://[domain-server]/public/test/`
+use app `https://[domain-server]/[route]/`
 
 
 ### Create Database
@@ -68,8 +68,10 @@ Import the [TEST-DATA.sql](https://raw.githubusercontent.com/jhonvegamas/tools-p
 
 Use the Postman application to test the API or anyone that allows you to make requests of type GET, POST, PUT, DELETE.
 
-URL: `https://[domain-server]/public/test/`
-EXAMPLE: `https://localhost/public/test/` - `https://localhost:8080/test/`
+URL: `https://[domain-server]/[route]/`
+EXAMPLE: `https://localhost/test/` 
+
+-or- `https://localhost/public/test/` If you do not point the virtual host document root to the new application
 
 ## :eyeglasses: Authors
 
