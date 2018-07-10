@@ -28,7 +28,7 @@ To run the application in development, you can run these commands
 
 	cd [my-app-name]
 	composer install
-	composer start `or` php -S localhost:80
+	composer start `or` php -S localhost:80 -t public
 
 That's it! Now go build something cool.
 
