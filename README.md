@@ -1,11 +1,11 @@
-# Slim Framework
+# [Slim Framework](https://www.slimframework.com/)
 
 [![Build Status](https://travis-ci.org/slimphp/Slim.svg?branch=3.x)](https://travis-ci.org/slimphp/Slim)
 [![Coverage Status](https://coveralls.io/repos/github/slimphp/Slim/badge.svg?branch=3.x)](https://coveralls.io/github/slimphp/Slim?branch=3.x)
 [![Total Downloads](https://poser.pugx.org/slim/slim/downloads)](https://packagist.org/packages/slim/slim)
 [![License](https://poser.pugx.org/slim/slim/license)](https://packagist.org/packages/slim/slim)
 
-Slim is a PHP micro-framework that helps you quickly write simple yet powerful web applications and APIs.
+[Slim](https://www.slimframework.com/) is a PHP micro-framework that helps you quickly write simple yet powerful web applications and APIs.
 
 ## Slim Framework 3 Skeleton Application for API's
 
