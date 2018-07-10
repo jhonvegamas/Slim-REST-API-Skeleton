@@ -66,7 +66,7 @@ Import the [TEST-DATA.sql](https://raw.githubusercontent.com/jhonvegamas/tools-p
 
 ## Test
 
-Use the Postman application to test the API or anyone that allows you to make requests of type GET, POS, PUT, DELETE.
+Use the Postman application to test the API or anyone that allows you to make requests of type GET, POST, PUT, DELETE.
 
 URL: `https://[domain-server]/public/test/`
 EXAMPLE: `https://localhost/public/test/`
