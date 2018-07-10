@@ -18,7 +18,7 @@ This skeleton application was built for Composer. This makes setting up a new Sl
 
 Run this command from the directory in which you want to download your new Slim Framework application.
 
-https://github.com/jhonvegamas/Slim-Skeleton/archive/master.zip
+https://github.com/jhonvegamas/Slim-REST-API-Skeleton.git
 
 Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
 
@@ -35,10 +35,45 @@ That's it! Now go build something cool.
 use app `https://[domain-server]/public/test/`
 
 
-<a name="authors"></a>
+### Create Database
+
+Import the [TEST-SCHEMA.sql](https://raw.githubusercontent.com/jhonvegamas/tools-projects/master/mysql-scripts/test-schema.sql) file.
+ 
+Or run the following SQL script
+
+```SQL
+CREATE DATABASE IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+USE `test`;
+
+CREATE TABLE IF NOT EXISTS `test` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_name` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+```
+Import the [TEST-DATA.sql](https://raw.githubusercontent.com/jhonvegamas/tools-projects/master/mysql-scripts/test-data.sql) file.
+
+<div align="center">
+	<h3> Database Schema </h3>
+	<a href="">
+		<img src="https://raw.githubusercontent.com/jhonvegamas/tools-projects/master/img/schema-database-test.png" alt="schema">
+	</a>
+</div>
+
+## Test
+
+Use the Postman application to test the API or anyone that allows you to make requests of type GET, POS, PUT, DELETE.
+
+URL: `https://[domain-server]/public/test/`
+EXAMPLE: `https://localhost/public/test/`
+
 ## :eyeglasses: Authors
 
-  * **Jhon Vega** - *Initial work* - [JhonVegaMas](https://github.com/jhonvegamas) 
+  * **Jhon Vega** - *Initial work* - [Jhon Vega](https://github.com/jhonvegamas) 
 
 See also the list of [contributors](https://github.com/jhonvegamas/Slim-REST-API-Skeleton/graphs/contributors)
  who participated in this project.
