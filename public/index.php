@@ -28,6 +28,7 @@ require __DIR__ . '/../src/routes.php';
 
 require __DIR__ . '/../app/app_loader.php';
 
+// CORS configuration
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
     return $response
