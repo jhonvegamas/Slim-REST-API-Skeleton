@@ -1,0 +1,10 @@
+Options -Indexes
+
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^(.*)$ /public/$1 [R=301,L]
