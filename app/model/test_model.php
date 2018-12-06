@@ -4,6 +4,8 @@ namespace App\Model;
 use App\Lib\Database;
 use App\Lib\Response;
 
+date_default_timezone_set("America/Bogota");
+
 class TestModel
 {
     private $db;
@@ -27,12 +29,12 @@ class TestModel
 
             $this->response->setResponse(true);
             $this->response->result = $stm->fetchAll();
-
-            return $this->response;
-        } catch (Exception $e) {
-            $this->response->setResponse(false, $e->getMessage());
-            return $this->response;
+            
+        } catch (\Exception $e) {
+            $this->response->result = false;
+            $this->response->setResponse(false, $e->getMessage());            
         }
+        return $this->response;
     }
 
     public function get($value)
@@ -47,11 +49,11 @@ class TestModel
             $this->response->setResponse(true);
             $this->response->result = $stm->fetch();
 
-            return $this->response;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
+            $this->response->result = false;
             $this->response->setResponse(false, $e->getMessage());
-            return $this->response;
         }
+        return $this->response;
     }
 
     public function insert($data)
@@ -76,10 +78,21 @@ class TestModel
             $stmt->execute();
 
             $this->response->setResponse(true, 'Successfully Insertion');
-            $this->response->result = "";
-        } catch (Exception $e) {
-            $this->response->setResponse(false, $e->getMessage());
+            $this->response->result = true;
+            
+        } catch (\Exception $e) {            
+            $this->response->result = false;
+            if (strpos($e->getMessage(), 'Duplicate entry') != false) {
+                if (strpos($e->getMessage(), 'id') != false) {
+                    $this->response->setResponse(false, 'id in use');
+                } else {
+                    $this->response->setResponse(false, $e->getMessage());
+                }
+            } else {
+                $this->response->setResponse(false, $e->getMessage());
+            }
         }
+        
         return $this->response;
     }
 
@@ -104,12 +117,14 @@ class TestModel
             $stmt->execute();
 
             $this->response->setResponse(true, "Successfully Updated");
-            $this->response->result = "";
-            return $this->response;
-
-        } catch (Exception $e) {
+            $this->response->result = true;
+            
+        } catch (\Exception $e) {
+            $this->response->result = false;
             $this->response->setResponse(false, $e->getMessage());
         }
+        
+        return $this->response;
     }
 
     public function delete($id)
@@ -122,11 +137,13 @@ class TestModel
             $stmt->execute();
 
             $this->response->setResponse(true, "Successfully Deleted");
-            $this->response->result = "";
-            return $this->response;
+            $this->response->result = true;
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
+            $this->response->result = false;
             $this->response->setResponse(false, $e->getMessage());
         }
+        
+        return $this->response;
     }    
 }
