@@ -12,6 +12,7 @@ if (PHP_SAPI == 'cli-server') {
 require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
+error_reporting(E_ALL ^ E_NOTICE);
 
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
@@ -32,12 +33,13 @@ require __DIR__ . '/../app/app_loader.php';
 $app->add(function ($req, $res, $next) {
     $response = $next($req, $res);
     return $response
-        ->withHeader('Content-type', 'application/json')
         ->withHeader('Access-Control-Allow-Origin', '*')        
-        ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
         ->withHeader('Allow', 'GET, POST, PUT, DELETE')
         ->withHeader('Access-Control-Request-Method', 'GET, POST, PUT, DELETE')
-        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+        ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+        ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+        ->withHeader('Access-Control-Allow-Credentials', true)
+        ->withHeader('Content-type', 'application/json');
 });
 
 // Run app
